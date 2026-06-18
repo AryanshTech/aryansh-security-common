@@ -1,6 +1,7 @@
-package com.aryansh.security.config;
+package com.aryansh.security.autoconfigure;
 
 import com.aryansh.security.access.AccessEvaluator;
+import com.aryansh.security.config.AryanshFirebaseConfiguration;
 import com.aryansh.security.filter.FirebaseAuthenticationFilter;
 import com.aryansh.security.resolver.AuthenticatedPrincipalArgumentResolver;
 import com.google.firebase.auth.FirebaseAuth;
