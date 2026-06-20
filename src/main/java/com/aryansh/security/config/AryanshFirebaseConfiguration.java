@@ -49,9 +49,12 @@ public class AryanshFirebaseConfiguration {
 
     private GoogleCredentials loadCredentials() throws IOException {
         String credentialsPath = System.getenv("GOOGLE_APPLICATION_CREDENTIALS");
-        if (credentialsPath != null && Files.exists(Path.of(credentialsPath))) {
-            try (InputStream stream = Files.newInputStream(Path.of(credentialsPath))) {
-                return GoogleCredentials.fromStream(stream);
+        if (credentialsPath != null && !credentialsPath.isBlank()) {
+            Path path = Path.of(credentialsPath);
+            if (Files.exists(path)) {
+                try (InputStream stream = Files.newInputStream(path)) {
+                    return GoogleCredentials.fromStream(stream);
+                }
             }
         }
         return GoogleCredentials.getApplicationDefault();
