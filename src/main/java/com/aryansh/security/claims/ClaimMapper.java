@@ -90,7 +90,7 @@ public final class ClaimMapper {
         return switch (accessLevel) {
             case PLATFORM_ADMIN -> List.of("auth", "business-manager", "marketing-hub");
             case PLATFORM_TEAM -> List.of("business-manager", "marketing-hub");
-            case BUSINESS_OWNER, BUSINESS_MEMBER -> List.of("business-manager");
+            case BUSINESS_OWNER, BUSINESS_MEMBER -> List.of("business-manager", "marketing-hub");
         };
     }
 
